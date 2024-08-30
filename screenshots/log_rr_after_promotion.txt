@@ -1,0 +1,54 @@
+[ec2-user@ip-10-2-10-82 ~]$ mysql -u admin -p -h database-1.cx1rlef09g9n.us-east-1.rds.amazonaws.com
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+ 
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.005 sec)
+
+MySQL [(none)]> CREATE DATABASE udacity;
+Query OK, 1 row affected (0.018 sec)
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.002 sec)
+ 
+MySQL [(none)]> USE udacity;
+Database changed
+MySQL [udacity]> SHOW TABLES;
+Empty set (0.002 sec)
+ 
+MySQL [udacity]> CREATE TABLE Persons (PersonID int, LastName VARCHAR(255), FirstName VARCHAR(255), Address VARCHAR(255), sex CHAR(5), birth DATE);
+Query OK, 0 rows affected (0.060 sec)
+ 
+MySQL [udacity]> INSERT INTO Persons VALUES (065789, 'Hoang', 'Manh', 'VietNam', 'm', '1997-10-01');
+Query OK, 1 row affected (0.010 sec)
+ 
+MySQL [udacity]> SELECT * FROM Persons;
++----------+----------+-----------+---------+------+------------+
+| PersonID | LastName | FirstName | Address | sex  | birth      |
++----------+----------+-----------+---------+------+------------+
+|    65789 | Hoang    | Manh      | VietNam | m    | 1997-10-01 |
++----------+----------+-----------+---------+------+------------+
+1 row in set (0.001 sec)

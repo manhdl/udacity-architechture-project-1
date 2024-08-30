@@ -1,0 +1,23 @@
+[ec2-user@ip-10-2-10-82 ~]$ mysql -u admin -p -h dbreadreplica.cj9mgblmw32v.us-east-2.rds.amazonaws.com
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+ 
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.008 sec)
+
+MySQL [(none)]> CREATE DATABASE udacity;
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
